@@ -1,0 +1,81 @@
+<html>
+    <!--描述网页信息-->
+    <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>小黄</title>
+ 		<style>
+            .btn{height:40px; width:60%; padding: 0px 30px; background-color: #0071E7; border: solid 1px #0071E7; border-radius:5px; font-size: 1.2em; color: white}
+ 		</style>
+        <script>
+            //2 调用OC注册给的方法JS
+            function btnClick1() {
+                window.WebViewJavascriptBridge.callHandler('showMobile')
+            }
+            function btnClick2() {
+                window.WebViewJavascriptBridge.callHandler('showMobile', '小黄')
+                
+            }
+            function btnClick3() {
+                window.WebViewJavascriptBridge.callHandler('showSendMsg', {'mobile': '13300001111', 'events':'周末一起去爬山'})
+            }
+
+        </script>
+
+    </head>
+
+    <!--网页具体内容-->
+    <body>
+        <script>
+            function setupWebViewJavascriptBridge(callback) {
+                if (window.WebViewJavascriptBridge) { return callback(WebViewJavascriptBridge); }
+                if (window.WVJBCallbacks) { return window.WVJBCallbacks.push(callback); }
+                window.WVJBCallbacks = [callback];
+                var WVJBIframe = document.createElement('iframe');
+                WVJBIframe.style.display = 'none';
+                WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+                document.documentElement.appendChild(WVJBIframe);
+                setTimeout(function() { document.documentElement.removeChild(WVJBIframe) }, 0)
+            }
+        
+            setupWebViewJavascriptBridge(function(bridge) {
+                 //1 注册JS的方法给OC
+                 bridge.registerHandler('alertMobile', function(data, responseCallback) {
+                     alert('我是上面的小黄 手机号是:13300001111')
+                 })
+                 bridge.registerHandler('alertName', function(data, responseCallback) {
+                    alert('你好 ' + data + ', 我也很高兴见到你')
+                       
+                 })
+                 bridge.registerHandler('alertSendMsg', function(data, responseCallback) {
+                     alert('这是我的手机号:' + data['mobile'] + ',' + data['events'] + '!!')
+                 })
+            })
+
+        </script>
+
+        <!--页面内容-->
+        <br/><br/>
+
+		<div>
+			<label>小黄：13300001111</label>
+		</div>
+		<br/><br/>
+
+
+		<div>
+			<button class="btn" type="button" onclick="btnClick1()">小红的手机号</button>
+		</div>
+		<br/>
+
+		<div>
+			<button class="btn" type="button" onclick="btnClick2()">打电话给小红</button>
+		</div>
+		<br/>
+
+		<div>
+			<button class="btn" type="button" onclick="btnClick3()">发短信给小红</button>
+		</div>
+
+
+    </body>
+</html>
