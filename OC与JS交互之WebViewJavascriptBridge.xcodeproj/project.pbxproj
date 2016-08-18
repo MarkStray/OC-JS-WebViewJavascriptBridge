@@ -98,10 +98,10 @@
 		CECE0DF51D643855007B7FE4 /* WebViewJavascriptBridge */ = {
 			isa = PBXGroup;
 			children = (
-				CECE0DF61D643855007B7FE4 /* WebViewJavascriptBridge.h */,
-				CECE0DF71D643855007B7FE4 /* WebViewJavascriptBridge.m */,
 				CECE0DF81D643855007B7FE4 /* WebViewJavascriptBridge_JS.h */,
 				CECE0DF91D643855007B7FE4 /* WebViewJavascriptBridge_JS.m */,
+				CECE0DF61D643855007B7FE4 /* WebViewJavascriptBridge.h */,
+				CECE0DF71D643855007B7FE4 /* WebViewJavascriptBridge.m */,
 				CECE0DFA1D643855007B7FE4 /* WebViewJavascriptBridgeBase.h */,
 				CECE0DFB1D643855007B7FE4 /* WebViewJavascriptBridgeBase.m */,
 				CECE0DFC1D643855007B7FE4 /* WKWebViewJavascriptBridge.h */,
@@ -300,6 +300,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "OC与JS交互之WebViewJavascriptBridge/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.renrencaichang.OC-JS---WebViewJavascriptBridge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -311,6 +312,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "OC与JS交互之WebViewJavascriptBridge/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.renrencaichang.OC-JS---WebViewJavascriptBridge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -336,6 +338,7 @@
 				CECE0DF21D63FCDF007B7FE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
